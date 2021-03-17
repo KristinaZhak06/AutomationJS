@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!---------------------------------------Task 1-------------------------------------->
+<script>
+    function calcRectangleArea() {
+        let width = +prompt("Enter the width of the triangle: ", "");
+        let height = +prompt("enter the height of the triangle: ", "");
+        if (isNaN(width) || isNaN(height)) {
+           throw new Error("The entered value is not a number!" + '<br/>');
+        }
+        return width * height;
+    }
+    try {
+        let result = calcRectangleArea();
+        document.write (result + " (result of 1 task)" + '<br/>');
+    }catch (error) {
+        console.log('Error has occured!' + error);
+        document.write ('Error has occured!' + error);
+    }
+</script>
+
+   <!---------------------------------------Task 2-------------------------------------->
+<script>
+    function checkAge() {
+        const age = +prompt("Please enter you age: ","");
+        if (age === 0) {
+            throw new Error(': The field is empty! Please enter your age!');
+        } else if (isNaN(age)) {
+            throw new Error(': The entered value is not a number!');
+        } else if (age < 14) {
+            throw new Error(': Your age is less than allowed!');
+        } else {
+            alert('You can watch this film!');
+        }
+        return age
+    }
+    try {
+        let result1 = checkAge();
+    }
+    catch (error) {
+        console.log (error.name);
+        document.write (error.name);
+        console.log (error.message);
+        document.write (error.message);
+    }
+</script>
+
+<!---------------------------------------Task 4-------------------------------------->
+<script>
+    function showUser(id) {
+        if (id < 0) {
+            throw new Error('The value cannot be negative! ' + 'Value: ' + id);
+        }
+
+        return {id:id};
+    }
+       
+    function showUsers(ids){
+        let result = [];
+        ids.forEach(function (id){
+            try{
+                let value = showUser(id);
+                result.push(value);
+            } catch (exeption) {
+                console.log(exeption.message);
+                document.write ("</br>" + exeption.message);
+            }
+        });
+
+        return result;
+    }
+
+    function DisplayUsersList(){
+        let randomIds = generateIds();
+        let users = showUsers(randomIds);
+        document.write("</br>Users: " +  users.map(user => "{id:" + user.id + "}").join(","));   
+    }
+
+    function generateIds(){
+        let rundomIds = [];
+        for (let i = 0; i < 4; i++) {
+            rundomIds.push( rand(-50, 50) );
+         }
+        
+       return rundomIds;
+    }
+
+    function rand(from, to) {
+        return Math.floor(Math.random() * (to - from) + from)
+    }
+
+    DisplayUsersList();
+</script>
+
+</body>
+</html>
