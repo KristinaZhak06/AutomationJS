@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- -------------------------------task1------------------------------------------ -->
+  <script>
+
+    let x = 1;
+    let y = 2;
+    
+    x = String(x);
+    y = String(y);
+
+    let res1 = x + y;
+    console.log(res1); // "12"
+    console.log(typeof res1); // "string"
+
+    let res2 = (x < y) + "2";
+    console.log(res2); // "true2"
+    console.log(typeof res2); // "string"
+
+    let res3 = x < y;
+    console.log(res3); // true
+    console.log(typeof res3); // "boolean"
+
+    let res4 = (x + y) / "true";
+    console.log(res4); // NaN
+    console.log(typeof res4); // "number"
+
+  </script>
+
+<!-- -------------------------------task2------------------------------------------ -->
+
+<script>
+    const number = prompt("Input the number: ","");
+    if (number % 2 == 0 && number > 0) {
+        console.log("You have entered an even positive number.");
+    } else if (number % 7 == 0) {
+    console.log("You have entered a multiple of 7 number.");
+    } else {
+    console.log("You entered an no even number or a no multiple of 7");
+    }
+</script>
+
+<!-- -------------------------------task3------------------------------------------ -->
+
+<script>
+    let arr = new Array(4);
+
+    arr[0] = 3;
+    arr[1] = "Task";
+    arr[2] = true;
+    arr[3] = null;
+
+    console.log(arr.length);
+    let userNumber = prompt("Input the number for the fifth element of the array:","");
+    arr.push(userNumber);
+    document.write("The fifth element of the array: " + arr[4]);
+    document.write("<br/>" + "The first element of the array: " + arr[0]);
+    document.write("<br/>" + "The elements of the array: " + arr);
+    
+</script>
+
+<!-- -------------------------------task4------------------------------------------ -->
+<script>
+    let cities = ["Rome", "Lviv", "Warsaw"];
+    cities.join("*");
+
+</script>
+
+<!-- -------------------------------task5------------------------------------------ -->
+<script>
+    let isAdult = prompt("How old are you?","");
+    if (isAdult < 18) {
+        console.log("You are still too young.");
+    } else {
+        console.log("You have reached the age of majority.");
+     } 
+
+</script>
+
+<!-- -------------------------------task6------------------------------------------ -->
+<script>
+    let triangleSideA = +prompt("Enter the side of triangle 'A':","");
+    let triangleSideB = +prompt("Enter the side of triangle 'B':","");
+    let triangleSideC = +prompt("Enter the side of triangle 'C':","");
+
+    if (isNaN(triangleSideA) || isNaN(triangleSideB) || isNaN(triangleSideC)){
+      console.log("The entered values is not a number.");
+    } else if (triangleSideA > 0 && triangleSideB > 0 && triangleSideC > 0) {
+      let p = (triangleSideA + triangleSideB + triangleSideC) / 2;
+      let s = Math.sqrt(p * (p - triangleSideA) * (p - triangleSideB) * (p - triangleSideC));
+      console.log("The area of the triangle: " + s.toFixed(3));
+    }else {
+      console.log("Incorect data!");
+    }
+
+    triangleSideA *= 2;
+    triangleSideB *= 2;
+    triangleSideC *= 2;
+
+    if (triangleSideA + triangleSideB === triangleSideC || triangleSideB + triangleSideC === triangleSideA || triangleSideA + triangleSideC === triangleSideB) {
+      console.log("The triangle is right-angled.");
+    } else {
+      console.log("The triangle is not right-angled ");
+    }
+
+</script>
+
+<!-- -------------------------------task6------------------------------------------ -->
+<script>
+let date = new Date();
+let hours = date.getHours();
+
+console.log(hours); 
+
+if (hours >= 23 || hours <= 5){
+  document.write("</br>" + "Good night!");
+}else if (hours > 5 || hours <= 11){
+  document.write("</br>" + "Good morning!");
+}else if (hours > 11 || hours <= 17){
+  document.write("</br>" + "Good day!");
+}else {
+  document.write("</br>" + "Good evening!");
+}
+
+</script>
+</body>
+</html>
