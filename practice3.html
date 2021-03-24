@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- -------------------------------task1------------------------------------------ -->
+<script>
+    let arr = [2,3,4,5];
+    let value = 1;
+    let value1 = 1;
+    let j = 0; 
+
+    for(let i = 0; i < arr.length; i++){
+        console.log(arr[i]);
+        value *= arr[i];
+        
+    }console.log(value);
+
+    while(j < arr.length){
+        value1 *= arr[j];
+        j++    
+    }console.log(value1);
+
+</script>
+
+<!-- -------------------------------task2------------------------------------------ -->
+<script>
+
+    for(let n = 0; n < 16; n++){
+        if (n == 0 || n % 2 == 0 ){
+            console.log(n + "- is even");
+        }else {
+            console.log(n + "- is odd");
+        }
+    }
+
+</script>
+
+<!-- -------------------------------task3------------------------------------------ -->
+<script>
+    function randArray(k){
+        let rundomNumber = [];
+        for (let i = 0; i < k; i++) {
+            rundomNumber.push( rand(1, 500) );
+         } console.log(rundomNumber)
+    } 
+    randArray(5);
+
+    function rand(from, to) {
+        return Math.floor(Math.random() * (to - from) + from)
+    }
+
+</script>
+
+<!-- -------------------------------task4------------------------------------------ -->
+<script>
+    let a = prompt("Enter the number a:","");
+    let b = prompt("Enter the number b:","");
+    
+    function raiseToDegree(a,b){
+        let degree = a;
+        for (let i = 1; i < b; i++){
+            degree *= a;
+        }return degree;
+    } 
+
+    if (a < 1 || b < 1){
+        console.log("The value must be positive and not = 0");
+    }else {
+        console.log(raiseToDegree(a,b));
+    }
+
+</script>
+
+<!-- -------------------------------task5------------------------------------------ -->
+<script>
+    function findMin() {
+       var min = arguments[0];
+       for (let i = 1; i < arguments.length; i++) {
+       if (arguments[i] < min) {
+                   min = arguments[i];
+         }
+       } return min;
+    }
+    console.log (findMin(1, 123, -8, 0, 44, -64));
+
+</script>
+
+<!-- -------------------------------task6------------------------------------------ -->
+<script>
+    function findUnique(arr1){
+    let isUniqueElementInArray = true;
+    for(let i = 0; i < arr1.length; i++) {
+       if( arr1.indexOf(arr1[i], i + 1 ) !== -1)
+        isUniqueElementInArray = false
+   }
+   return isUniqueElementInArray;
+}
+
+let arr1 = [4, 4, 10, 3 , 5, 100];
+console.log(findUnique(arr1));
+
+</script>
+
+<!-- -------------------------------task7------------------------------------------ -->
+<script>
+    function element(array, count){
+        if (count == null){
+            console.log(array.pop())
+        } else {
+            console.log(array.slice(-count))
+        }
+    }
+
+    element([3, 4, 10, -5]);
+    element([3, 4, 10, -5],2);
+    element([3, 4, 10, -5],8);      
+
+</script>
+
+<!-- -------------------------------task8------------------------------------------ -->
+<script>
+    function upperСase(text){
+        let splitMethod = text.split(' ');
+        let newArr = [];
+
+        for(let i = 0; i < splitMethod.length; i++){
+            newArr.push(splitMethod[i].charAt(0).toUpperCase()+splitMethod[i].slice(1));
+        }
+    return newArr.join(' ');
+    }
+
+    console.log(upperСase("i love java script"));
+    
+</script>
+
+</body>
+</html>
